@@ -23,9 +23,15 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const checkAuth = async () => {
-      const currentUser = await authService.getCurrentUser();
-      setUser(currentUser);
-      setIsLoading(false);
+      try {
+        const currentUser = await authService.getCurrentUser();
+        setUser(currentUser);
+      } catch (error) {
+        console.error("Auth check failed:", error);
+        setUser(null);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     checkAuth();

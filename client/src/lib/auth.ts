@@ -62,7 +62,10 @@ class AuthService {
   }
 
   async getCurrentUser(): Promise<AuthUser | null> {
-    if (!this.token) return null;
+    if (!this.token) {
+      // No token, return null immediately
+      return null;
+    }
     
     try {
       const response = await fetch("/api/auth/me", {
@@ -72,7 +75,11 @@ class AuthService {
       });
       
       if (!response.ok) {
-        this.logout();
+        // Clear invalid token
+        this.token = null;
+        this.user = null;
+        localStorage.removeItem("auth_token");
+        localStorage.removeItem("auth_user");
         return null;
       }
       
@@ -81,7 +88,11 @@ class AuthService {
       localStorage.setItem("auth_user", JSON.stringify(user));
       return user;
     } catch (error) {
-      this.logout();
+      // Clear invalid token on error
+      this.token = null;
+      this.user = null;
+      localStorage.removeItem("auth_token");
+      localStorage.removeItem("auth_user");
       return null;
     }
   }
