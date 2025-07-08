@@ -1,8 +1,8 @@
-# Corporate LLM - Document Intelligence Platform
+# BPN Intelligence - Business AI Assistant Platform
 
 ## Overview
 
-This is a full-stack Corporate LLM application that enables users to upload, index, and interact with documents through a chat interface. The system provides local document processing and AI-powered query capabilities for enterprise knowledge management.
+This is a full-stack Business Intelligence application designed for BPN Rwanda (https://bpn.rw/) that enables users to upload, index, and interact with business documents through an AI-powered chat interface. The system provides local document processing and strategic business intelligence capabilities with a professional entrepreneur vibe for internal corporate operations.
 
 ## System Architecture
 
@@ -34,16 +34,17 @@ This is a full-stack Corporate LLM application that enables users to upload, ind
    - Storage quota management (2.5GB default per user)
    - Shared knowledge base for organization-wide documents
 
-3. **Chat Interface**
-   - Real-time messaging system
-   - Document-aware AI responses
-   - Source citation and reference tracking
+3. **Business Intelligence Assistant**
+   - Real-time business analysis and insights
+   - Document-aware AI responses with strategic context
+   - Source citation and business intelligence reporting
 
 4. **User Interface**
-   - Responsive dashboard with analytics
-   - Document library with search and filtering
+   - Responsive dashboard with business analytics
+   - Collapsible sidebar for better screen utilization
+   - Document library with intelligent search and filtering
    - Upload area with drag-and-drop support
-   - Analytics and reporting pages
+   - Professional entrepreneur-focused design with BPN branding
 
 ## Data Flow
 
@@ -81,10 +82,17 @@ The build process:
 ```
 Changelog:
 - July 08, 2025. Initial setup
+- July 08, 2025. Updated branding for BPN Rwanda with professional entrepreneur vibe
+- July 08, 2025. Added collapsible sidebar functionality
+- July 08, 2025. Customized AI assistant for business intelligence and strategic insights
 ```
 
 ## User Preferences
 
 ```
 Preferred communication style: Simple, everyday language.
+Target audience: BPN Rwanda corporate users (https://bpn.rw/)
+Design theme: Professional entrepreneur vibe with BPN turquoise branding
+UI Features: Collapsible sidebar, business intelligence focus
+AI Assistant: Customized for business strategy and document analysis
 ```

@@ -101,8 +101,8 @@ export default function AnalyticsPage() {
         <div className="bg-white border-b border-gray-200 px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-xl font-semibold text-gray-900">Analytics</h2>
-              <p className="text-sm text-gray-600">System performance and usage insights</p>
+              <h2 className="text-xl font-semibold text-gray-900">Business Analytics</h2>
+              <p className="text-sm text-gray-600">Intelligence platform performance and business insights</p>
             </div>
             <div className="flex items-center space-x-4">
               <Select value={timeRange} onValueChange={(value: "day" | "week" | "month") => setTimeRange(value)}>

@@ -49,6 +49,33 @@ export interface IStorage {
     queriesToday: number;
     processing: number;
   }>;
+  
+  // Analytics methods
+  getAnalytics(userId: number, range: string): Promise<{
+    documentStats: {
+      totalDocuments: number;
+      processedToday: number;
+      processingTime: number;
+      errorRate: number;
+    };
+    userActivity: {
+      totalQueries: number;
+      activeUsers: number;
+      avgResponseTime: number;
+      popularTimes: Array<{ hour: number; count: number }>;
+    };
+    systemPerformance: {
+      cpuUsage: number;
+      memoryUsage: number;
+      diskUsage: number;
+      indexingSpeed: number;
+    };
+    trends: {
+      documentsOverTime: Array<{ date: string; count: number }>;
+      queriesOverTime: Array<{ date: string; count: number }>;
+      fileTypes: Array<{ type: string; count: number; percentage: number }>;
+    };
+  }>;
 }
 
 export class MemStorage implements IStorage {
@@ -76,9 +103,9 @@ export class MemStorage implements IStorage {
     });
 
     // Initialize system status
-    this.updateSystemStatus("llm_engine", "online", "Local LLM is running");
-    this.updateSystemStatus("onedrive_sync", "online", "OneDrive connected");
-    this.updateSystemStatus("document_indexing", "online", "Indexing active");
+    this.updateSystemStatus("ai_assistant", "online", "BPN Intelligence Assistant is running");
+    this.updateSystemStatus("document_processing", "online", "Local document processing active");
+    this.updateSystemStatus("security_layer", "online", "All data processed locally");
     this.updateSystemStatus("backup_service", "scheduled", "Next backup in 4 hours");
   }
 
@@ -95,6 +122,9 @@ export class MemStorage implements IStorage {
     const user: User = {
       ...insertUser,
       id,
+      role: insertUser.role || "user",
+      storageUsed: insertUser.storageUsed || 0,
+      storageLimit: insertUser.storageLimit || 2500,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
@@ -132,6 +162,10 @@ export class MemStorage implements IStorage {
     const document: Document = {
       ...insertDoc,
       id,
+      isShared: insertDoc.isShared || false,
+      isIndexed: insertDoc.isIndexed || false,
+      isProcessing: insertDoc.isProcessing || false,
+      metadata: insertDoc.metadata || null,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
@@ -168,6 +202,7 @@ export class MemStorage implements IStorage {
     const message: Message = {
       ...insertMsg,
       id,
+      sources: insertMsg.sources || null,
       createdAt: new Date(),
     };
     this.messages.set(id, message);
@@ -184,7 +219,7 @@ export class MemStorage implements IStorage {
       id: existing?.id || this.currentStatusId++,
       component,
       status,
-      message,
+      message: message || null,
       updatedAt: new Date(),
     };
     this.systemStatus.set(component, systemStatus);
@@ -230,6 +265,87 @@ export class MemStorage implements IStorage {
       storageUsed: user?.storageUsed || 0,
       queriesToday: todayMessages.length,
       processing: userDocs.filter(doc => doc.isProcessing).length,
+    };
+  }
+
+  async getAnalytics(userId: number, range: string): Promise<{
+    documentStats: {
+      totalDocuments: number;
+      processedToday: number;
+      processingTime: number;
+      errorRate: number;
+    };
+    userActivity: {
+      totalQueries: number;
+      activeUsers: number;
+      avgResponseTime: number;
+      popularTimes: Array<{ hour: number; count: number }>;
+    };
+    systemPerformance: {
+      cpuUsage: number;
+      memoryUsage: number;
+      diskUsage: number;
+      indexingSpeed: number;
+    };
+    trends: {
+      documentsOverTime: Array<{ date: string; count: number }>;
+      queriesOverTime: Array<{ date: string; count: number }>;
+      fileTypes: Array<{ type: string; count: number; percentage: number }>;
+    };
+  }> {
+    const userDocs = await this.getDocuments(userId);
+    const userMessages = Array.from(this.messages.values()).filter(msg => msg.userId === userId);
+    
+    // Generate mock analytics data
+    const totalDocs = userDocs.length;
+    const fileTypeCounts = userDocs.reduce((acc, doc) => {
+      const type = doc.fileType.includes("pdf") ? "pdf" :
+                   doc.fileType.includes("excel") ? "excel" :
+                   doc.fileType.includes("powerpoint") ? "powerpoint" :
+                   doc.fileType.includes("word") ? "word" : "other";
+      acc[type] = (acc[type] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+
+    const fileTypes = Object.entries(fileTypeCounts).map(([type, count]) => ({
+      type,
+      count,
+      percentage: Math.round((count / totalDocs) * 100) || 0
+    }));
+
+    return {
+      documentStats: {
+        totalDocuments: totalDocs,
+        processedToday: Math.floor(Math.random() * 5) + 1,
+        processingTime: Math.floor(Math.random() * 30) + 15,
+        errorRate: Math.floor(Math.random() * 5) + 1,
+      },
+      userActivity: {
+        totalQueries: userMessages.filter(m => m.role === "user").length,
+        activeUsers: 1,
+        avgResponseTime: Math.floor(Math.random() * 1000) + 500,
+        popularTimes: Array.from({ length: 24 }, (_, i) => ({
+          hour: i,
+          count: Math.floor(Math.random() * 10)
+        }))
+      },
+      systemPerformance: {
+        cpuUsage: Math.floor(Math.random() * 30) + 20,
+        memoryUsage: Math.floor(Math.random() * 40) + 30,
+        diskUsage: Math.floor(Math.random() * 20) + 40,
+        indexingSpeed: Math.floor(Math.random() * 50) + 25,
+      },
+      trends: {
+        documentsOverTime: Array.from({ length: 7 }, (_, i) => ({
+          date: new Date(Date.now() - i * 24 * 60 * 60 * 1000).toISOString(),
+          count: Math.floor(Math.random() * 5) + 1
+        })).reverse(),
+        queriesOverTime: Array.from({ length: 7 }, (_, i) => ({
+          date: new Date(Date.now() - i * 24 * 60 * 60 * 1000).toISOString(),
+          count: Math.floor(Math.random() * 10) + 5
+        })).reverse(),
+        fileTypes
+      }
     };
   }
 }

@@ -43,12 +43,12 @@ export default function LoginPage() {
       <Card className="w-full max-w-md mx-4">
         <CardHeader className="text-center">
           <div className="w-16 h-16 bpn-turquoise rounded-full flex items-center justify-center mx-auto mb-4">
-            <i className="fas fa-robot text-white text-xl"></i>
+            <i className="fas fa-brain text-white text-xl"></i>
           </div>
           <CardTitle className="text-2xl font-bold text-gray-900 mb-2">
-            Corporate LLM
+            BPN Intelligence
           </CardTitle>
-          <p className="text-gray-600">Document Intelligence Platform</p>
+          <p className="text-gray-600">Business AI Assistant Platform</p>
         </CardHeader>
         
         <CardContent>

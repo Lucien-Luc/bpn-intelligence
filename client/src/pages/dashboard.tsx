@@ -56,17 +56,17 @@ export default function DashboardPage() {
         <div className="bg-white border-b border-gray-200 px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-xl font-semibold text-gray-900">Dashboard</h2>
-              <p className="text-sm text-gray-600">Welcome back</p>
+              <h2 className="text-xl font-semibold text-gray-900">Business Intelligence Dashboard</h2>
+              <p className="text-sm text-gray-600">Welcome back to BPN Intelligence</p>
             </div>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2 text-sm text-gray-600">
                 <div className="w-2 h-2 bg-[#a8cb63] rounded-full"></div>
-                <span>Local LLM Active</span>
+                <span>AI Assistant Active</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-600">
-                <i className="fas fa-cloud-upload-alt text-[#00728e]"></i>
-                <span>OneDrive Synced</span>
+                <i className="fas fa-shield-alt text-[#00728e]"></i>
+                <span>Local Processing</span>
               </div>
               <Button className="bpn-turquoise hover:opacity-90">
                 <i className="fas fa-plus mr-2"></i>

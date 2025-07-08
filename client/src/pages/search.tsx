@@ -39,11 +39,11 @@ export default function SearchPage() {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-xl font-semibold text-gray-900">Search</h2>
-              <p className="text-sm text-gray-600">Find documents and content across your library</p>
+              <p className="text-sm text-gray-600">Find business documents and extract strategic insights</p>
             </div>
             <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <i className="fas fa-search text-[#00728e]"></i>
-              <span>AI-powered search</span>
+              <i className="fas fa-brain text-[#00728e]"></i>
+              <span>Intelligent business search</span>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function SearchPage() {
               <i className="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
               <Input
                 type="text"
-                placeholder="Search documents, content, or ask questions..."
+                placeholder="Search business documents, ask strategic questions, or request analysis..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-12 pr-20 py-3 text-lg"

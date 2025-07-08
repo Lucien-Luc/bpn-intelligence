@@ -31,7 +31,7 @@ export default function UploadPage() {
             </div>
             <div className="flex items-center space-x-2 text-sm text-gray-600">
               <i className="fas fa-shield-alt text-[#00728e]"></i>
-              <span>All data processed locally</span>
+              <span>Secure local processing</span>
             </div>
           </div>
         </div>

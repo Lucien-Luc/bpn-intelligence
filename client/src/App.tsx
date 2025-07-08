@@ -36,9 +36,9 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <div className="w-16 h-16 bpn-turquoise rounded-full flex items-center justify-center mx-auto mb-4">
-            <i className="fas fa-robot text-white text-xl"></i>
+            <i className="fas fa-brain text-white text-xl"></i>
           </div>
-          <p className="text-gray-600">Loading...</p>
+          <p className="text-gray-600">Loading BPN Intelligence...</p>
         </div>
       </div>
     );

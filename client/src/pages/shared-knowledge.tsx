@@ -39,13 +39,13 @@ export default function SharedKnowledgePage() {
         <div className="bg-white border-b border-gray-200 px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-xl font-semibold text-gray-900">Shared Knowledge</h2>
-              <p className="text-sm text-gray-600">Corporate documents accessible to all users</p>
+              <h2 className="text-xl font-semibold text-gray-900">Knowledge Base</h2>
+              <p className="text-sm text-gray-600">Shared business intelligence and corporate documents</p>
             </div>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2 text-sm text-gray-600">
                 <i className="fas fa-building text-[#00728e]"></i>
-                <span>Company Resources</span>
+                <span>BPN Business Resources</span>
               </div>
               <Button className="bpn-turquoise hover:opacity-90">
                 <i className="fas fa-share-alt mr-2"></i>

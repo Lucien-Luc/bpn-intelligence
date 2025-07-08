@@ -61,7 +61,7 @@ export default function ChatInterface({ height = "h-96", showHeader = true }: Ch
         <CardHeader className="border-b border-gray-200 py-4">
           <div className="flex items-center justify-between">
             <CardTitle className="text-lg font-semibold text-gray-900">
-              Document Assistant
+              Business Intelligence Assistant
             </CardTitle>
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-[#a8cb63] rounded-full"></div>
@@ -80,10 +80,10 @@ export default function ChatInterface({ height = "h-96", showHeader = true }: Ch
           <div className="flex items-center justify-center h-full text-center">
             <div>
               <div className="w-16 h-16 bpn-turquoise rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-robot text-white text-xl"></i>
+                <i className="fas fa-brain text-white text-xl"></i>
               </div>
               <p className="text-gray-600">
-                Hello! I'm your corporate document assistant. I can help you find information from your documents, answer questions, and provide insights. What would you like to know?
+                Hello! I'm your BPN Business Intelligence Assistant. I can help you analyze documents, extract insights, generate reports, and support your strategic decision-making. How can I assist you today?
               </p>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function ChatInterface({ height = "h-96", showHeader = true }: Ch
                     {msg.role === "user" ? "You" : "AI"}
                   </span>
                 ) : (
-                  <i className="fas fa-robot text-white text-sm"></i>
+                  <i className="fas fa-brain text-white text-sm"></i>
                 )}
               </div>
               <div className={`flex-1 max-w-md ${
@@ -136,7 +136,7 @@ export default function ChatInterface({ height = "h-96", showHeader = true }: Ch
         <form onSubmit={handleSendMessage} className="flex items-center space-x-2">
           <Input
             type="text"
-            placeholder="Ask a question about your documents..."
+            placeholder="Ask about your business documents, request analysis, or generate insights..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             disabled={sendMessageMutation.isPending}

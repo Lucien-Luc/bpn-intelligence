@@ -127,7 +127,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         setTimeout(async () => {
           await storage.createMessage({
             userId: req.user.id,
-            content: "I'm analyzing your request and searching through your documents. This is a simulated response from the local LLM system.",
+            content: "I'm analyzing your business documents and extracting relevant insights. As your BPN Intelligence Assistant, I can help you with strategic analysis, document summarization, trend identification, and business intelligence reporting. What specific insights would you like me to provide?",
             role: "assistant",
             sources: null,
           });
