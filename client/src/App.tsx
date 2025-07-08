@@ -24,12 +24,15 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
+        console.log("Checking auth...");
         const currentUser = await authService.getCurrentUser();
+        console.log("Auth result:", currentUser);
         setUser(currentUser);
       } catch (error) {
         console.error("Auth check failed:", error);
         setUser(null);
       } finally {
+        console.log("Auth check complete");
         setIsLoading(false);
       }
     };
@@ -79,8 +82,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Router />
+        <div className="min-h-screen bg-gray-50">
+          <Toaster />
+          <Router />
+        </div>
       </TooltipProvider>
     </QueryClientProvider>
   );
