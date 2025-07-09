@@ -52,10 +52,10 @@ export default function LoginPage() {
               <img 
                 src={bpnLogo} 
                 alt="BPN - Business Professionals Network" 
-                className="w-64 h-auto mx-auto mb-4 cursor-pointer"
+                className="w-64 h-auto mx-auto mb-4 cursor-pointer brightness-0 invert"
               />
             </a>
-            <div className="text-xl opacity-90">Business Professionals Network</div>
+            
           </div>
           <div className="w-16 h-1 bg-white opacity-50 mx-auto"></div>
         </div>
