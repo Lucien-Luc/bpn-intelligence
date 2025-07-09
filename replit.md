@@ -85,6 +85,9 @@ Changelog:
 - July 08, 2025. Updated branding for BPN Rwanda with professional entrepreneur vibe
 - July 08, 2025. Added collapsible sidebar functionality
 - July 08, 2025. Customized AI assistant for business intelligence and strategic insights
+- July 08, 2025. Redesigned login page with neuromorphic design matching BPN branding
+- July 08, 2025. Created ChatGPT-like interface with dark sidebar and conversation history
+- July 08, 2025. Updated main interface to use ChatGPT-style layout and interactions
 ```
 
 ## User Preferences
@@ -93,6 +96,6 @@ Changelog:
 Preferred communication style: Simple, everyday language.
 Target audience: BPN Rwanda corporate users (https://bpn.rw/)
 Design theme: Professional entrepreneur vibe with BPN turquoise branding
-UI Features: Collapsible sidebar, business intelligence focus
+UI Features: ChatGPT-like interface, neuromorphic login design, collapsible dark sidebar
 AI Assistant: Customized for business strategy and document analysis
 ```

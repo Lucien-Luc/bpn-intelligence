@@ -105,4 +105,66 @@
   .stats-card {
     @apply bg-gradient-to-br from-white to-gray-50;
   }
+
+  /* Neuromorphic Login Styles */
+  .neuromorphic-card {
+    box-shadow: 
+      20px 20px 60px #bebebe,
+      -20px -20px 60px #ffffff;
+  }
+
+  .neuromorphic-input {
+    @apply border-0 bg-gray-50 rounded-xl px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#00728e] focus:ring-opacity-20 transition-all duration-300;
+    box-shadow: 
+      inset 8px 8px 16px #c7c7c7,
+      inset -8px -8px 16px #ffffff;
+  }
+
+  .neuromorphic-button {
+    @apply border-0 rounded-xl font-semibold transition-all duration-300;
+    box-shadow: 
+      8px 8px 16px #c7c7c7,
+      -8px -8px 16px #ffffff;
+  }
+
+  .neuromorphic-button:hover {
+    box-shadow: 
+      4px 4px 8px #c7c7c7,
+      -4px -4px 8px #ffffff;
+  }
+
+  .neuromorphic-button:active {
+    box-shadow: 
+      inset 4px 4px 8px #c7c7c7,
+      inset -4px -4px 8px #ffffff;
+  }
+
+  /* ChatGPT-like Interface */
+  .chat-message {
+    @apply max-w-none mb-4;
+  }
+
+  .chat-message.user {
+    @apply ml-auto;
+  }
+
+  .chat-message.assistant {
+    @apply mr-auto;
+  }
+
+  .chat-bubble {
+    @apply p-4 rounded-lg shadow-sm;
+  }
+
+  .chat-input {
+    @apply border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#00728e] focus:ring-1 focus:ring-[#00728e] transition-all duration-200;
+  }
+
+  .sidebar-compact {
+    @apply w-16 transition-all duration-300;
+  }
+
+  .sidebar-expanded {
+    @apply w-64 transition-all duration-300;
+  }
 }

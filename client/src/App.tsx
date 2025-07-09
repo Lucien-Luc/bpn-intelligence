@@ -8,6 +8,7 @@ import { authService, type AuthUser } from "./lib/auth";
 import { useEffect, useState } from "react";
 
 import LoginPage from "@/pages/login";
+import ChatGPTMain from "@/pages/chatgpt-main";
 import DashboardPage from "@/pages/dashboard";
 import ChatPage from "@/pages/chat";
 import DocumentsPage from "@/pages/documents";
@@ -61,9 +62,9 @@ function Router() {
   return (
     <AuthProvider>
       <Switch>
-        <Route path="/" component={DashboardPage} />
+        <Route path="/" component={ChatGPTMain} />
+        <Route path="/chat" component={ChatGPTMain} />
         <Route path="/dashboard" component={DashboardPage} />
-        <Route path="/chat" component={ChatPage} />
         <Route path="/documents" component={DocumentsPage} />
         <Route path="/upload" component={UploadPage} />
         <Route path="/search" component={SearchPage} />
