@@ -16,6 +16,7 @@ import UploadPage from "@/pages/upload";
 import SearchPage from "@/pages/search";
 import SharedKnowledgePage from "@/pages/shared-knowledge";
 import AnalyticsPage from "@/pages/analytics";
+import SettingsPage from "@/pages/settings";
 import NotFound from "@/pages/not-found";
 
 function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -70,6 +71,7 @@ function Router() {
         <Route path="/search" component={SearchPage} />
         <Route path="/shared-knowledge" component={SharedKnowledgePage} />
         <Route path="/analytics" component={AnalyticsPage} />
+        <Route path="/settings" component={SettingsPage} />
         <Route component={NotFound} />
       </Switch>
     </AuthProvider>

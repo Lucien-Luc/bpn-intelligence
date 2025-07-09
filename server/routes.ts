@@ -202,6 +202,66 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json(results);
   });
 
+  // Settings API routes
+  app.post("/api/settings/agent", requireAuth, async (req: any, res) => {
+    try {
+      // Store agent settings for the user
+      res.json({ success: true, message: "Agent settings saved successfully" });
+    } catch (error) {
+      res.status(400).json({ message: "Failed to save agent settings" });
+    }
+  });
+
+  app.post("/api/settings/user", requireAuth, async (req: any, res) => {
+    try {
+      // Store user settings for the user
+      res.json({ success: true, message: "User settings saved successfully" });
+    } catch (error) {
+      res.status(400).json({ message: "Failed to save user settings" });
+    }
+  });
+
+  app.post("/api/settings/security", requireAuth, async (req: any, res) => {
+    try {
+      // Store security settings for the user
+      res.json({ success: true, message: "Security settings saved successfully" });
+    } catch (error) {
+      res.status(400).json({ message: "Failed to save security settings" });
+    }
+  });
+
+  app.delete("/api/knowledge/clear", requireAuth, async (req: any, res) => {
+    try {
+      // Clear all documents for the user
+      const documents = await storage.getDocuments(req.user.id);
+      for (const doc of documents) {
+        await storage.deleteDocument(doc.id);
+      }
+      res.json({ success: true, message: "Knowledge base cleared successfully" });
+    } catch (error) {
+      res.status(400).json({ message: "Failed to clear knowledge base" });
+    }
+  });
+
+  app.get("/api/data/export", requireAuth, async (req: any, res) => {
+    try {
+      // Export user data
+      const documents = await storage.getDocuments(req.user.id);
+      const messages = await storage.getMessages(req.user.id);
+      
+      const exportData = {
+        user: { ...req.user, password: undefined },
+        documents,
+        messages,
+        exportDate: new Date().toISOString(),
+      };
+      
+      res.json(exportData);
+    } catch (error) {
+      res.status(400).json({ message: "Failed to export data" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

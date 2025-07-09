@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { authService } from "@/lib/auth";
+import { Link } from "wouter";
 
 const conversationHistory = [
   { id: 1, title: "Q3 Financial Analysis", time: "2 hours ago" },
@@ -83,6 +84,26 @@ export default function ChatGPTSidebar() {
           </div>
         </div>
       )}
+
+      {/* Settings Button */}
+      <div className="p-4 border-t border-gray-700">
+        <Link href="/settings">
+          <Button
+            variant="ghost"
+            className="w-full text-gray-400 hover:text-white hover:bg-gray-800 justify-start"
+            size={isCollapsed ? "sm" : "default"}
+          >
+            {isCollapsed ? (
+              <i className="fas fa-cog"></i>
+            ) : (
+              <>
+                <i className="fas fa-cog mr-2"></i>
+                Settings
+              </>
+            )}
+          </Button>
+        </Link>
+      </div>
 
       {/* User Profile */}
       <div className="p-4 border-t border-gray-700">

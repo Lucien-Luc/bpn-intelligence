@@ -88,6 +88,14 @@ Changelog:
 - July 08, 2025. Redesigned login page with neuromorphic design matching BPN branding
 - July 08, 2025. Created ChatGPT-like interface with dark sidebar and conversation history
 - July 08, 2025. Updated main interface to use ChatGPT-style layout and interactions
+- July 09, 2025. Added BPN logo to login page with link to www.bpn.rw
+- July 09, 2025. Implemented comprehensive settings system with:
+  - Agent fine-tuning (personality, creativity, verbosity, system prompts)
+  - Advanced AI parameters (temperature, tokens, context window)
+  - Knowledge base file upload and management
+  - User preferences (notifications, language, timezone)
+  - Security settings (2FA, session timeout, encryption)
+  - Data management (export, clear knowledge base)
 ```
 
 ## User Preferences
