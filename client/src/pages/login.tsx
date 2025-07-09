@@ -70,9 +70,9 @@ export default function LoginPage() {
                 <i className="fas fa-brain text-white text-xl"></i>
               </div>
               <h1 className="text-3xl font-bold text-gray-800 mb-2">
-                BPN Intelligence
+                BPN Corporate Assistant
               </h1>
-              <p className="text-gray-600">Business AI Assistant Platform</p>
+              <p className="text-gray-600">Internal Operations Support System</p>
             </div>
 
             <Form {...form}>

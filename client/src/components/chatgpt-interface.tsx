@@ -64,8 +64,8 @@ export default function ChatGPTInterface() {
             <i className="fas fa-brain text-white text-sm"></i>
           </div>
           <div>
-            <h1 className="text-lg font-semibold text-gray-900">BPN Intelligence</h1>
-            <p className="text-sm text-gray-500">Business AI Assistant</p>
+            <h1 className="text-lg font-semibold text-gray-900">BPN Corporate Assistant</h1>
+            <p className="text-sm text-gray-500">Supporting BPN Rwanda Operations</p>
           </div>
         </div>
       </div>
@@ -83,11 +83,11 @@ export default function ChatGPTInterface() {
                 <i className="fas fa-brain text-white text-xl"></i>
               </div>
               <h2 className="text-xl font-semibold text-gray-800 mb-2">
-                Welcome to BPN Intelligence
+                Welcome to BPN Corporate Assistant
               </h2>
               <p className="text-gray-600">
-                Your Business AI Assistant is ready to help you analyze documents, 
-                generate insights, and support strategic decision-making.
+                Your assistant for BPN Rwanda operations. I can help with coaching program documentation, 
+                seminar planning, partnership analysis, and administrative tasks supporting our entrepreneurs.
               </p>
             </div>
           </div>

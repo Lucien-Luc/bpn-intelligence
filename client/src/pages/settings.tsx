@@ -55,13 +55,13 @@ export default function SettingsPage() {
 
   // Agent Settings State
   const [agentSettings, setAgentSettings] = useState<AgentSettings>({
-    name: "BPN Intelligence Assistant",
+    name: "BPN Corporate Assistant",
     personality: "professional",
     responseStyle: "detailed",
     creativity: 70,
     verbosity: 60,
-    specialization: "business",
-    systemPrompt: "You are a professional business intelligence assistant for BPN Rwanda. Provide strategic insights, analyze documents, and help with business decisions.",
+    specialization: "corporate",
+    systemPrompt: "You are a corporate assistant for BPN Rwanda employees. Help with internal operations, program management, entrepreneur coaching documentation, seminar planning, partnership analysis, and administrative tasks. Support BPN's mission of business coaching, training, networking, and helping entrepreneurs access finance.",
     temperature: 0.7,
     maxTokens: 2000,
     contextWindow: 4000,
@@ -231,13 +231,13 @@ export default function SettingsPage() {
                       <SelectValue placeholder="Select specialization" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="business">Business Strategy</SelectItem>
-                      <SelectItem value="finance">Finance & Accounting</SelectItem>
-                      <SelectItem value="marketing">Marketing & Sales</SelectItem>
-                      <SelectItem value="operations">Operations</SelectItem>
-                      <SelectItem value="legal">Legal & Compliance</SelectItem>
-                      <SelectItem value="technology">Technology</SelectItem>
-                      <SelectItem value="general">General Business</SelectItem>
+                      <SelectItem value="corporate">Corporate Operations</SelectItem>
+                      <SelectItem value="coaching">Business Coaching Support</SelectItem>
+                      <SelectItem value="training">Training & Seminar Management</SelectItem>
+                      <SelectItem value="partnerships">Partnership Development</SelectItem>
+                      <SelectItem value="finance-access">Access to Finance Programs</SelectItem>
+                      <SelectItem value="networking">Networking & Events</SelectItem>
+                      <SelectItem value="administration">Administration</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -377,7 +377,7 @@ export default function SettingsPage() {
             <CardContent>
               <div className="space-y-4">
                 <p className="text-sm text-gray-600">
-                  Upload documents to train your agent and improve its knowledge about your business.
+                  Upload internal documents, coaching materials, seminar content, and operational procedures to train the assistant for BPN Rwanda operations.
                 </p>
                 <UploadArea onUploadComplete={handleUploadComplete} />
                 <div className="flex justify-between items-center mt-4">

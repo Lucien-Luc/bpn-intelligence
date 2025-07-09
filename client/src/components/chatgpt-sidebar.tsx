@@ -4,10 +4,10 @@ import { authService } from "@/lib/auth";
 import { Link } from "wouter";
 
 const conversationHistory = [
-  { id: 1, title: "Q3 Financial Analysis", time: "2 hours ago" },
-  { id: 2, title: "Market Research Summary", time: "1 day ago" },
-  { id: 3, title: "Strategic Planning Review", time: "3 days ago" },
-  { id: 4, title: "Customer Feedback Analysis", time: "1 week ago" },
+  { id: 1, title: "Coaching Program Progress Report", time: "2 hours ago" },
+  { id: 2, title: "July Seminar Planning", time: "1 day ago" },
+  { id: 3, title: "Partnership Development Update", time: "3 days ago" },
+  { id: 4, title: "Entrepreneur Onboarding Process", time: "1 week ago" },
 ];
 
 export default function ChatGPTSidebar() {
@@ -29,7 +29,7 @@ export default function ChatGPTSidebar() {
             </div>
             {!isCollapsed && (
               <div>
-                <h1 className="text-sm font-semibold">BPN Intelligence</h1>
+                <h1 className="text-sm font-semibold">BPN Corporate</h1>
               </div>
             )}
           </div>

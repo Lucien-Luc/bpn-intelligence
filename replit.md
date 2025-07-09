@@ -1,8 +1,8 @@
-# BPN Intelligence - Business AI Assistant Platform
+# BPN Corporate Assistant - Internal Operations Support System
 
 ## Overview
 
-This is a full-stack Business Intelligence application designed for BPN Rwanda (https://bpn.rw/) that enables users to upload, index, and interact with business documents through an AI-powered chat interface. The system provides local document processing and strategic business intelligence capabilities with a professional entrepreneur vibe for internal corporate operations.
+This is a full-stack corporate assistant application designed for BPN Rwanda employees (https://bpn.rw/) that enables internal teams to upload, organize, and interact with corporate documents through an AI-powered chat interface. The system supports BPN's core operations including business coaching programs, seminar management, partnership development, and access to finance initiatives. It serves BPN employees (not entrepreneurs) in their daily corporate tasks.
 
 ## System Architecture
 
@@ -34,17 +34,17 @@ This is a full-stack Business Intelligence application designed for BPN Rwanda (
    - Storage quota management (2.5GB default per user)
    - Shared knowledge base for organization-wide documents
 
-3. **Business Intelligence Assistant**
-   - Real-time business analysis and insights
-   - Document-aware AI responses with strategic context
-   - Source citation and business intelligence reporting
+3. **Corporate Operations Assistant**
+   - Support for BPN coaching programs and entrepreneur management
+   - Document analysis for internal operations and reporting
+   - Assistance with seminar planning, partnership development, and administrative tasks
 
 4. **User Interface**
-   - Responsive dashboard with business analytics
+   - Responsive dashboard with corporate operations analytics
    - Collapsible sidebar for better screen utilization
-   - Document library with intelligent search and filtering
-   - Upload area with drag-and-drop support
-   - Professional entrepreneur-focused design with BPN branding
+   - Document library for internal materials and coaching resources
+   - Upload area for corporate documents and training materials
+   - Professional corporate design with BPN branding for internal staff
 
 ## Data Flow
 
@@ -96,14 +96,20 @@ Changelog:
   - User preferences (notifications, language, timezone)
   - Security settings (2FA, session timeout, encryption)
   - Data management (export, clear knowledge base)
+- July 09, 2025. Refocused application for BPN Rwanda corporate employees:
+  - Researched BPN's business model (coaching, training, networking, access to finance)
+  - Updated AI assistant to support internal operations, not entrepreneurs
+  - Customized specializations for coaching programs, seminar planning, partnerships
+  - Modified conversation examples and system prompts for corporate use
 ```
 
 ## User Preferences
 
 ```
 Preferred communication style: Simple, everyday language.
-Target audience: BPN Rwanda corporate users (https://bpn.rw/)
-Design theme: Professional entrepreneur vibe with BPN turquoise branding
+Target audience: BPN Rwanda corporate employees (not entrepreneurs)
+Organization focus: Business coaching, training, networking, access to finance programs
+Design theme: Professional corporate design with BPN turquoise branding
 UI Features: ChatGPT-like interface, neuromorphic login design, collapsible dark sidebar
-AI Assistant: Customized for business strategy and document analysis
+AI Assistant: Customized for BPN internal operations - coaching program support, seminar management, partnership development, administrative tasks
 ```
