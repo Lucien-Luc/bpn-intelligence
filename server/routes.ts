@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { loginSchema, insertMessageSchema } from "@shared/schema";
 import { z } from "zod";
+import microsoftRoutes from "./microsoft-routes";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -261,6 +262,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(400).json({ message: "Failed to export data" });
     }
   });
+
+  // Add Microsoft Graph routes
+  app.use('/api/microsoft', microsoftRoutes);
 
   const httpServer = createServer(app);
   return httpServer;

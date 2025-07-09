@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useQuery } from "@tanstack/react-query";
 import { authService, type AuthUser } from "./lib/auth";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
 import LoginPage from "@/pages/login";
 import ChatGPTMain from "@/pages/chatgpt-main";
@@ -17,6 +17,9 @@ import SearchPage from "@/pages/search";
 import SharedKnowledgePage from "@/pages/shared-knowledge";
 import AnalyticsPage from "@/pages/analytics";
 import SettingsPage from "@/pages/settings";
+import { lazy } from "react";
+
+const AdminPage = lazy(() => import("@/pages/admin"));
 import NotFound from "@/pages/not-found";
 
 function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -72,6 +75,16 @@ function Router() {
         <Route path="/shared-knowledge" component={SharedKnowledgePage} />
         <Route path="/analytics" component={AnalyticsPage} />
         <Route path="/settings" component={SettingsPage} />
+        <Route path="/admin" component={() => (
+          <Suspense fallback={<div className="flex items-center justify-center min-h-screen">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00728e] mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading admin panel...</p>
+            </div>
+          </div>}>
+            <AdminPage />
+          </Suspense>
+        )} />
         <Route component={NotFound} />
       </Switch>
     </AuthProvider>

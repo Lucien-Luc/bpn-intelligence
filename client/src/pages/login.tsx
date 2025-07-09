@@ -75,6 +75,28 @@ export default function LoginPage() {
               <p className="text-gray-600">Internal Operations Support System</p>
             </div>
 
+            {/* Microsoft Sign In Button */}
+            <div className="mb-6">
+              <a
+                href="/api/microsoft/auth/microsoft"
+                className="w-full flex items-center justify-center gap-3 bg-[#0078d4] text-white py-3 px-4 rounded-xl hover:bg-[#106ebe] focus:outline-none focus:ring-2 focus:ring-[#0078d4] focus:ring-offset-2 font-medium transition-all duration-300 shadow-lg neuromorphic-button"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 23 23" fill="currentColor">
+                  <path d="M1 1h10v10H1V1zm12 0h10v10H13V1zM1 13h10v10H1V13zm12 0h10v10H13V13z"/>
+                </svg>
+                Sign in with Microsoft (@bpn.rw)
+              </a>
+            </div>
+
+            <div className="relative mb-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300" />
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-3 bg-white text-gray-500">Or continue with email</span>
+              </div>
+            </div>
+
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -137,6 +159,11 @@ export default function LoginPage() {
               <div className="text-sm text-gray-600 bg-gray-50 rounded-lg p-3">
                 <div>admin@company.com</div>
                 <div>password123</div>
+              </div>
+              
+              <div className="mt-4 text-xs text-gray-400">
+                <p>Microsoft Graph authentication requires Azure AD configuration.</p>
+                <p>Contact your administrator for @bpn.rw domain access.</p>
               </div>
             </div>
           </div>

@@ -101,6 +101,14 @@ Changelog:
   - Updated AI assistant to support internal operations, not entrepreneurs
   - Customized specializations for coaching programs, seminar planning, partnerships
   - Modified conversation examples and system prompts for corporate use
+- July 09, 2025. Implemented Microsoft Graph API integration:
+  - Added Azure Active Directory authentication for @bpn.rw domain users
+  - Created admin approval system for new user access requests  
+  - Built Microsoft Graph service for OneDrive and SharePoint file access
+  - Added database schema for Microsoft tokens, user approvals, and file tracking
+  - Integrated LLM server status monitoring and communication endpoints
+  - Updated login page with Microsoft Sign-in option
+  - Created comprehensive admin panel for managing user access requests
 ```
 
 ## User Preferences
