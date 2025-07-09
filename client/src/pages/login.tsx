@@ -7,6 +7,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { authService } from "@/lib/auth";
 import { useToast } from "@/hooks/use-toast";
 import { loginSchema, type LoginData } from "@shared/schema";
+import bpnLogo from "@assets/logo_1752044485701.png";
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +43,18 @@ export default function LoginPage() {
       <div className="flex-1 bg-[#00728e] flex items-center justify-center">
         <div className="text-center text-white">
           <div className="mb-8">
-            <div className="text-6xl font-bold mb-4">BPN</div>
+            <a 
+              href="https://www.bpn.rw" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block hover:opacity-80 transition-opacity duration-300"
+            >
+              <img 
+                src={bpnLogo} 
+                alt="BPN - Business Professionals Network" 
+                className="w-64 h-auto mx-auto mb-4 cursor-pointer"
+              />
+            </a>
             <div className="text-xl opacity-90">Business Professionals Network</div>
           </div>
           <div className="w-16 h-1 bg-white opacity-50 mx-auto"></div>
