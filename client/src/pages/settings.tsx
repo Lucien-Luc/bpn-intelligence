@@ -12,8 +12,9 @@ import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { apiRequest, queryClient } from "@/lib/queryClient";
-import { Upload, Brain, User, Bell, Shield, Database, Zap, FileText, Trash2, Download } from "lucide-react";
+import { Upload, Brain, User, Bell, Shield, Database, Zap, FileText, Trash2, Download, ArrowLeft } from "lucide-react";
 import UploadArea from "@/components/upload-area";
+import { Link } from "wouter";
 
 interface AgentSettings {
   name: string;
@@ -180,8 +181,16 @@ export default function SettingsPage() {
   return (
     <div className="max-w-6xl mx-auto p-6">
       <div className="mb-8">
+        <div className="flex items-center gap-4 mb-4">
+          <Link href="/">
+            <Button variant="ghost" size="sm" className="flex items-center gap-2">
+              <ArrowLeft className="w-4 h-4" />
+              Back to Chat
+            </Button>
+          </Link>
+        </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Settings</h1>
-        <p className="text-gray-600">Configure your BPN Intelligence assistant and preferences</p>
+        <p className="text-gray-600">Configure your BPN Corporate Assistant and preferences</p>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
